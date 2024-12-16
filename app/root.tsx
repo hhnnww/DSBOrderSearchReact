@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@mui/material';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import {
   Links,
   Meta,
@@ -28,6 +28,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <ThemeProvider theme={darkTheme}>
+          <CssBaseline />
           {children}
         </ThemeProvider>
         <ScrollRestoration />
