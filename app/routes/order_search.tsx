@@ -44,13 +44,14 @@ export default function Component() {
           setMsg("");
         }}
       />
+      <Button variant="contained" disableElevation onClick={getOrderHandle}>
+        查询订单
+      </Button>
+
       {msg && (
         <Alert color={msg === "订单存在" ? "success" : "error"}>{msg}</Alert>
       )}
 
-      <Button variant="contained" disableElevation onClick={getOrderHandle}>
-        查询订单
-      </Button>
       {msg === "订单存在" && res && (
         <Stack spacing={1}>
           <div className="">订单编号：{res.order_sn}</div>
