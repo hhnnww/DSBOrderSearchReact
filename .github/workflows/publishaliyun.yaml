@@ -36,9 +36,9 @@ jobs:
           REMOTE_USER: root
           SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
           SOURCE: "/"
-          TARGET: /home/order_react
+          TARGET: /home/order_react/
 
           SCRIPT_AFTER: |
-            cd /home/order_react
+            cd /home/order_react/
             npm install
             npm run build
