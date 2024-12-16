@@ -7,7 +7,7 @@ import {
   type GetOrderOrderSnGetResponse,
 } from "src/client";
 
-export const meta: MetaFunction = () => [{ title: "订单查询系统" }];
+export const meta: MetaFunction = () => [{ title: "订单查询" }];
 
 export default function Component() {
   const [order, setOrder] = useState("");
