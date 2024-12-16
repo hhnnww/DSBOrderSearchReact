@@ -1,21 +1,12 @@
-import { CssBaseline, ThemeProvider } from '@mui/material';
-import {
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration
-} from "react-router";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 
-
-import { client } from '../src/client';
+import { client } from "../src/client";
 import { darkTheme } from "./theme";
 
 client.setConfig({
-  baseURL: 'https://yumimi.top/api/',
+  baseURL: "https://yumimi.top/api/",
 });
-
-
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -39,7 +30,5 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />
+  return <Outlet />;
 }
-
-
