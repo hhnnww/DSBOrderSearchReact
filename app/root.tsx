@@ -7,8 +7,9 @@ import {
   ScrollRestoration,
 } from "react-router";
 
-import { ThemeProvider } from "@emotion/react";
+import { ThemeProvider } from "@mui/material";
 
+import CssBaseline from "@mui/material/CssBaseline";
 import { client } from '../src/client';
 import type { Route } from "./+types/root";
 import { darkTheme } from "./theme";
@@ -39,6 +40,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return <ThemeProvider theme={darkTheme}>
+    <CssBaseline />
     <Outlet />
   </ThemeProvider>;
 }
