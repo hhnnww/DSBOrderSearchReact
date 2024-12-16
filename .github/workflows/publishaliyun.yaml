@@ -11,22 +11,8 @@ on:
 jobs:
   build-production:
     runs-on: ubuntu-latest
-    # strategy:
-    #   matrix:
-    #     node-version: [21.x] # 配置所需node版本
     steps: # 自动化步骤
       - uses: actions/checkout@master # 第一步，检出仓库副本
-
-      # - name: Use Node.js ${{ matrix.node-version }} #规定node.js版本(可不配置)
-      #   uses: actions/setup-node@master
-      #   with:
-      #     node-version: ${{ matrix.node-version }}
-
-      # - name: Install dependencies # 第二步，安装依赖
-      #   run: npm install
-
-      # - name: Build # 第三步，打包代码
-      #   run: npm run build
 
       - name: 发布到服务器并重启服务
         uses: easingthemes/ssh-deploy@main
