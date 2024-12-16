@@ -1,0 +1,44 @@
+name: 发布到阿里云轻量
+
+on:
+  push:
+    branches:
+      - master # 只在master上push触发部署
+    paths-ignore: # 下列文件的变更不触发部署，可以自行添加
+      - README.md
+      - LICENSE
+
+jobs:
+  build-production:
+    runs-on: ubuntu-latest
+    # strategy:
+    #   matrix:
+    #     node-version: [21.x] # 配置所需node版本
+    steps: # 自动化步骤
+      - uses: actions/checkout@master # 第一步，检出仓库副本
+
+      # - name: Use Node.js ${{ matrix.node-version }} #规定node.js版本(可不配置)
+      #   uses: actions/setup-node@master
+      #   with:
+      #     node-version: ${{ matrix.node-version }}
+
+      # - name: Install dependencies # 第二步，安装依赖
+      #   run: npm install
+
+      # - name: Build # 第三步，打包代码
+      #   run: npm run build
+
+      - name: 发布到服务器并重启服务
+        uses: easingthemes/ssh-deploy@main
+        with:
+          REMOTE_PORT: "22"
+          REMOTE_HOST: 47.238.180.18
+          REMOTE_USER: root
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+          SOURCE: "/"
+          TARGET: /home/order_react
+
+          SCRIPT_AFTER: |
+            cd /home/order_react
+            npm install
+            npm run build
