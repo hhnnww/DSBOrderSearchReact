@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@mui/material';
 import {
   Links,
   Meta,
@@ -8,6 +9,7 @@ import {
 
 
 import { client } from '../src/client';
+import { darkTheme } from "./theme";
 
 client.setConfig({
   baseURL: 'https://yumimi.top/api/',
@@ -25,7 +27,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <ThemeProvider theme={darkTheme}>
+          {children}
+        </ThemeProvider>
         <ScrollRestoration />
         <Scripts />
       </body>

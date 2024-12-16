@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@hey-api/openapi-ts": "^0.59.2",
+    "@originjs/vite-plugin-commonjs": "^1.0.3",
     "@react-router/dev": "^7.0.2",
     "@types/node": "^20",
     "@types/react": "^19.0.1",
