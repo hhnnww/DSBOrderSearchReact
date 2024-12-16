@@ -31,6 +31,7 @@ export default function Component() {
             <div className="">订单金额：{res.bonus_amount}</div>
             <div className="">订单日期：{res.send_time_format}</div>
             <div className="">店铺：{res.shop_name}</div>
+            <div className="">状态：{res.status_msg}</div>
         </Stack>}
     </Stack >
 }
