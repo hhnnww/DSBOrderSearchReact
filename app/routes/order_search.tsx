@@ -19,7 +19,7 @@ export default function Component() {
             setRes(res.data)
         }
     }
-    return <Stack spacing={4} alignItems={'start'} p={2} pt={10} sx={{ maxWidth: 600, margin: '0 auto' }}>
+    return <Stack spacing={4} alignItems={'start'} p={2} pt={12} sx={{ maxWidth: 600, margin: '0 auto' }}>
         <TextField fullWidth label='订单编号' value={order} onChange={(event) => { setOrder(event.target.value); setRes(null); setMsg('') }} />
         {msg &&
             <Alert color={msg === '订单存在' ? 'success' : "error"}>{msg}</Alert>}
