@@ -8,8 +8,10 @@ import {
 } from "react-router";
 
 import { ThemeProvider } from "@emotion/react";
+import { CssBaseline } from "@mui/material";
 import { client } from '../src/client';
 import type { Route } from "./+types/root";
+import { darkTheme } from "./theme";
 
 client.setConfig({
   baseURL: 'https://yumimi.top/api/',
@@ -36,7 +38,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <ThemeProvider theme={{}}><Outlet /></ThemeProvider>;
+  return <ThemeProvider theme={darkTheme}>
+    <CssBaseline />
+    <Outlet />
+  </ThemeProvider>;
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
