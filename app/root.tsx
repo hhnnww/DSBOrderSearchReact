@@ -7,9 +7,7 @@ import {
 } from "react-router";
 
 
-import { CssBaseline, ThemeProvider } from "@mui/material";
 import { client } from '../src/client';
-import { darkTheme } from "./theme";
 
 client.setConfig({
   baseURL: 'https://yumimi.top/api/',
@@ -27,10 +25,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <ThemeProvider theme={darkTheme} defaultMode="dark">
-          <CssBaseline />
-          {children}
-        </ThemeProvider>
+        {children}
         <ScrollRestoration />
         <Scripts />
       </body>
