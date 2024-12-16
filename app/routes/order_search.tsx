@@ -54,8 +54,9 @@ export default function Component() {
       {msg === "订单存在" && res && (
         <Stack spacing={1}>
           <div className="">订单编号：{res.order_sn}</div>
-          <div className="">微信昵称：{res.buyer_nick}</div>
+          <div className="">微信昵称：{res.wechat_nick}</div>
           <div className="">订单金额：{res.bonus_amount}</div>
+          <div className="">买家账号：{res.buyer_nick}</div>
           <div className="">订单日期：{res.send_time_format}</div>
           <div className="">店铺：{res.shop_name}</div>
           <div className="">

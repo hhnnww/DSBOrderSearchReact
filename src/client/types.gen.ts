@@ -13,6 +13,7 @@ export type OrderModelResponse = {
     bonus_amount?: (string | null);
     send_time_format?: (string | null);
     buyer_nick?: (string | null);
+    wechat_nick?: (string | null);
 };
 
 export type ValidationError = {
