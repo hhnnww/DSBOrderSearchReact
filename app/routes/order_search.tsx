@@ -1,6 +1,9 @@
 import { Alert, Button, Chip, Stack, TextField } from "@mui/material"
 import { useState } from "react"
+import type { MetaFunction } from "react-router"
 import { getOrderOrderSnGet, type GetOrderOrderSnGetResponse } from "src/client"
+
+export const meta: MetaFunction = () => [{ title: "订单查询系统" }]
 
 export default function Component() {
     const [order, setOrder] = useState('')
